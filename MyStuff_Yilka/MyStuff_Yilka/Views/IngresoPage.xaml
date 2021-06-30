@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyStuff_Yilka.Views.IngresoPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="MyStuffLoginBG">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="40,0,40,0">
+            <Entry x:Name="TxtUsuario" Placeholder="Usuario" FontSize="Large">
+                
+            </Entry>
+
+            <Entry x:Name="TxtPassword" Placeholder="Contraseña" FontSize="Large" IsPassword="True" TextColor="#FFFF" PlaceholderColor="#FFFF"></Entry>
+
+            <Switch x:Name="SwVerPassword" IsToggled="False" Toggled="CmdVerPassword"></Switch>
+
+            <Button x:Name="BtnEntrar" Text="Ingresar" FontSize="Large" Clicked="CmdIngresar" CornerRadius="10" BackgroundColor="Green" TextColor="White" FontAttributes="Bold"></Button>
+
+            <Button x:Name="BtnRegistrarse" Text="Registrarse" FontSize="Large" Clicked="CmdRegistro" CornerRadius="10"></Button>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

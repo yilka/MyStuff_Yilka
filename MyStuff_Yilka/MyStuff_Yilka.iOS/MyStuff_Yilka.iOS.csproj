@@ -142,4 +142,7 @@
       <Name>MyStuff_Yilka</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\MyStuffLoginBG.png" />
+  </ItemGroup>
 </Project>

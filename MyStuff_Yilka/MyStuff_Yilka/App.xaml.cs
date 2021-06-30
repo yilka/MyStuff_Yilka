@@ -14,7 +14,8 @@ namespace MyStuff_Yilka
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new AppShell();
+            //MainPage = new AppShell();
+            MainPage = new NavigationPage(new IngresoPage());
         }
 
         protected override void OnStart()

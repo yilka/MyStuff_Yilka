@@ -7,10 +7,24 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Padding="40,0,40,0">
             <Entry x:Name="TxtUsuario" Placeholder="Usuario" FontSize="Large">
-                
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="Green"></Setter>
+                        <Setter Property="FontAttributes" Value="bold"></Setter>
+                        <Setter Property="TextColor" Value="White"></Setter>
+                    </Trigger>
+                </Entry.Triggers>
             </Entry>
 
-            <Entry x:Name="TxtPassword" Placeholder="Contraseña" FontSize="Large" IsPassword="True" TextColor="#FFFF" PlaceholderColor="#FFFF"></Entry>
+            <Entry x:Name="TxtPassword" Placeholder="Contraseña" FontSize="Medium" IsPassword="True">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry" Property="IsFocused" Value="True">
+                        <Setter Property="BackgroundColor" Value="DarkGreen"></Setter>
+                        <Setter Property="FontAttributes" Value="Bold"></Setter>
+                        <Setter Property="TextColor" Value="White"></Setter>
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
 
             <Switch x:Name="SwVerPassword" IsToggled="False" Toggled="CmdVerPassword"></Switch>
 

@@ -1,4 +1,4 @@
-﻿using MyStuff_Yilka.ViewModels;
+﻿
 using MyStuff_Yilka.Views;
 using System;
 using System.Collections.Generic;
@@ -11,8 +11,7 @@ namespace MyStuff_Yilka
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+            
         }
 
     }

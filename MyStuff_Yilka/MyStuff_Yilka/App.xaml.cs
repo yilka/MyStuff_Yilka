@@ -1,5 +1,4 @@
-﻿using MyStuff_Yilka.Services;
-using MyStuff_Yilka.Views;
+﻿using MyStuff_Yilka.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +12,7 @@ namespace MyStuff_Yilka
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            
             //MainPage = new AppShell();
             MainPage = new NavigationPage(new IngresoPage());
         }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MyStuff_Yilka.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using MyStuff_Yilka.Models;
 
 namespace MyStuff_Yilka.Views
 {
@@ -34,12 +35,16 @@ namespace MyStuff_Yilka.Views
 
         private async void CmdIngresar(object sender, EventArgs e)
         {
-            bool R = await Vm.ValidarUsuario(TxtUsuario.Text.Trim(), TxtPassword.Text.Trim());
+            User R = await Vm.ValidarUsuario(TxtUsuario.Text.Trim(), TxtPassword.Text.Trim());
 
-            if (R)
+            if (R != null && R.UserId > 0)
             {
-                await DisplayAlert(":)", "Usuario Correcto", "OK");
-                //ingresar al app 
+                //await DisplayAlert(":)", "Usuario Correcto", "OK");
+
+                //Asignar el usuario validado al usuario global 
+                ObjetosGlobales.MiUsuarioGlobal = R;
+
+                await Navigation.PushAsync(new SelectorDeAccionPage());
             }
             else
             {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace MyStuff_Yilka.Models
 {
@@ -74,7 +75,37 @@ namespace MyStuff_Yilka.Models
 
         }
 
+        public async Task<bool> GuardarItem()
+        {
+            bool R = false;
 
+            string RutaConsumoAPI = ObjetosGlobales.RutaProduccion + "Items";
+
+            var client = new RestClient(RutaConsumoAPI);
+
+            var request = new RestRequest(Method.POST);
+
+            //agregamos la info de seguridad 
+            request.AddHeader(ObjetosGlobales.ApiKeyName, ObjetosGlobales.ApiKeyValue);
+            request.AddHeader("Content-Type", "application/json");
+
+            //ahora serializamos esta clase ya que hemos definido que se enviará un json
+            string ClaseEnJson = JsonConvert.SerializeObject(this);
+
+            request.AddParameter("application/json", ClaseEnJson, ParameterType.RequestBody);
+
+            //ejecuta de forma asíncrona la consulta contra el API
+            IRestResponse Respuesta = await client.ExecuteAsync(request);
+
+            HttpStatusCode CodigoRespuesta = Respuesta.StatusCode;
+
+            if (CodigoRespuesta == HttpStatusCode.Created)
+            {
+                R = true;
+            }
+
+            return R;
+        }
 
     }
 }

@@ -24,7 +24,7 @@ namespace MyStuff_Yilka.Views
             //TODO. Como no hemos hecho un usuario global que contiene la info del usuario logueado
             //debo "quemar" el id del usuario 
 
-            VmItem.MyItem.UserId = 10;
+            VmItem.MyItem.UserId = ObjetosGlobales.MiUsuarioGlobal.UserId;
 
             LtsItems.ItemsSource = VmItem.ListarItems();
 

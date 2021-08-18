@@ -16,13 +16,9 @@
 
             <Entry x:Name="TxtCosto" Placeholder="Costo" VerticalOptions="CenterAndExpand" />
 
-            <Picker x:Name="CboMoneda" Title="Moneda" VerticalOptions="CenterAndExpand">
-                <Picker.Items>
-                    <x:String>CRC</x:String>
-                    <x:String>USD</x:String>
-                    <x:String>BTC</x:String>
-                </Picker.Items>
-            </Picker>
+            <Picker x:Name="CboMoneda" Title="Seleccionar Moneda" VerticalOptions="CenterAndExpand"
+                   ItemDisplayBinding="{Binding CurrencyName}"
+                   SelectedItem="{Binding MyCurrency}"/>
 
             <Entry x:Name="TxtSerie" Placeholder="Serie" VerticalOptions="CenterAndExpand" />
 
@@ -63,7 +59,10 @@
                 </Picker.Items>
             </Picker>
 
+            <Entry x:Name="TxtNumeroFactura" Placeholder="Núm. Factura" VerticalOptions="CenterAndExpand" />
+
             <Button x:Name="BtnAceptar" Text="Aceptar" BackgroundColor="Green" TextColor="White" FontAttributes="Bold" Clicked="BtnAceptar_Clicked" />
+
             <Button x:Name="BtnCancelar" Text="Cancelar" BackgroundColor="Firebrick" TextColor="White" Clicked="BtnCancelar_Clicked"/>
 
         </StackLayout>

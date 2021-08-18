@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MyStuff_Yilka.Models;
 
 namespace MyStuff_Yilka
 {
@@ -14,5 +15,7 @@ namespace MyStuff_Yilka
         //agregamos la info de seguridad ya sea JWT o ApiKey como en este caso 
         public static string ApiKeyName = "ApiKey";
         public static string ApiKeyValue = "1234qwertyABC";
+
+        public static User MiUsuarioGlobal = new User();
     }
 }
